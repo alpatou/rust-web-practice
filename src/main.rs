@@ -12,23 +12,27 @@ use to_do::to_do_factory;
 use to_do::ItemTypes;
 
 fn main() {
+    let file_path: String = String::from("./state.json");
+    let mut state: Map<String, Value> = read_file(&file_path);
     let done: ItemTypes = to_do::to_do_factory("shopping", TaskStatus::PENDING);
     match (done) {
         ItemTypes::Done(done_task) => {
-            done_task.get(&done_task.super_struct.title);
-            done_task.delete(&done_task.super_struct.title);
+            done_task.get(&done_task.super_struct.title, state.clone());
+            done_task.delete(
+                &done_task.super_struct.title,
+                TaskStatus::DONE.stringify().as_str(),
+                state.clone(),
+            );
         }
         ItemTypes::Pending(pending_task) => {
-            pending_task.get(&pending_task.super_struct.title);
-            pending_task.set_to_done(&pending_task.super_struct.title);
+            pending_task.get(&pending_task.super_struct.title, state.clone());
+            pending_task.set_to_done(&pending_task.super_struct.title, state.clone());
         }
     }
 
     let args: Vec<String> = env::args().collect();
     let status: &String = &args[1];
     let title: &String = &args[2];
-    let file_path: String = String::from("./state.json");
-    let mut state: Map<String, Value> = read_file(&file_path);
 
     println!("Before ops state was {:?}", state);
     state.insert(title.to_string(), json!(status));
