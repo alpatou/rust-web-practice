@@ -1,7 +1,7 @@
 use serde_json::value::Value;
 use serde_json::Map;
 pub trait Get {
-    fn get(&self, title: &str, state: Map<String, Value>) -> () {
+    fn get(&self, title: &str, state: &Map<String, Value>) -> () {
         let item: Option<&Value> = state.get(title);
 
         match item {

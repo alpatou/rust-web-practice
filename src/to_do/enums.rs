@@ -13,6 +13,14 @@ impl TaskStatus {
             &Self::PENDING => "PENDING".to_string(),
         }
     }
+
+    pub fn from_string(status: String) -> Self {
+        match status.as_str() {
+            "DONE" => Self::DONE,
+            "PENDING" => Self::PENDING,
+            _ => panic!("{} not supported", status),
+        }
+    }
 }
 
 impl fmt::Display for TaskStatus {

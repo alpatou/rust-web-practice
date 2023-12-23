@@ -4,9 +4,9 @@ use serde_json::value::Value;
 use serde_json::Map;
 
 pub trait Create {
-    fn create(&self, title: &str, status: &str, state: Map<String, Value>) {
+    fn create(&self, title: &str, status: &str, state: &mut Map<String, Value>) {
         state.insert(title.to_string(), json!(status));
-        write_to_file("./state.json", &mut state);
+        write_to_file("./state.json", state);
         println!("\n\n {} is being created", title);
     }
 }
