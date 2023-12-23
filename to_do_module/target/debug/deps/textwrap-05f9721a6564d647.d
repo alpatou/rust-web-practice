@@ -1,0 +1,11 @@
+/home/koral/code/rust-web-practice/target/debug/deps/textwrap-05f9721a6564d647.rmeta: /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/lib.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/indentation.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/word_separators.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/word_splitters.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/wrap_algorithms.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/line_ending.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/core.rs
+
+/home/koral/code/rust-web-practice/target/debug/deps/textwrap-05f9721a6564d647.d: /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/lib.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/indentation.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/word_separators.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/word_splitters.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/wrap_algorithms.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/line_ending.rs /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/core.rs
+
+/home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/lib.rs:
+/home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/indentation.rs:
+/home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/word_separators.rs:
+/home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/word_splitters.rs:
+/home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/wrap_algorithms.rs:
+/home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/line_ending.rs:
+/home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/textwrap-0.16.0/src/core.rs:

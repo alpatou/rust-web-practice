@@ -1,2 +1,10 @@
-/target
-state.json
+to_do_module/target
+to_do_module/state.json
+
+web_app/target
+
+# Added by cargo
+#
+# already existing elements were commented out
+
+#/target
