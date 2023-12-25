@@ -1,5 +1,0 @@
-/home/koral/code/rust-web-practice/target/debug/deps/clap_lex-ad420f174ecfbb2a.rmeta: /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clap_lex-0.2.4/src/lib.rs
-
-/home/koral/code/rust-web-practice/target/debug/deps/clap_lex-ad420f174ecfbb2a.d: /home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clap_lex-0.2.4/src/lib.rs
-
-/home/koral/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clap_lex-0.2.4/src/lib.rs:
