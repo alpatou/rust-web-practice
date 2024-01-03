@@ -1,5 +1,8 @@
-use actix_web::{web, App, HttpServer, Responder, HttpRequest};
+use actix_web::{ App, HttpServer, Responder, HttpRequest};
 mod views;
+mod to_do;
+mod state;
+mod processes;
 
 async fn greet ( req: HttpRequest) -> impl Responder {
     let name  = req.match_info().get("name").unwrap_or("World");
@@ -10,7 +13,7 @@ async fn greet ( req: HttpRequest) -> impl Responder {
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
-        let app  = App::new();
+        let app  = App::new().configure(views::views_factory);
         return app
         
     })
