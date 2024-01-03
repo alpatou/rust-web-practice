@@ -1,6 +1,7 @@
 use crate::processes::process_input;
 use crate::state::read_file;
 use crate::to_do::ItemTypes;
+use crate::to_do::enums::Command;
 use crate::to_do::{enums::TaskStatus, to_do_factory};
 use actix_web::HttpRequest;
 use serde_json::value::Value;
@@ -16,7 +17,7 @@ pub async fn create ( req: HttpRequest) -> String {
 
    let item : ItemTypes = to_do_factory(&title, TaskStatus::PENDING );
 
-   process_input(item,"create".to_string() ,&state );
+   process_input(item,Command::CREATE ,&state );
 
    format!("{} created", title)
 
