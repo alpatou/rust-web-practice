@@ -4,6 +4,7 @@ mod to_do;
 mod state;
 mod processes;
 mod json_serialization;
+use std::env;
 
 async fn greet ( req: HttpRequest) -> impl Responder {
     let name  = req.match_info().get("name").unwrap_or("World");
@@ -13,6 +14,8 @@ async fn greet ( req: HttpRequest) -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+
+  env::set_var("RUST_BACKTRACE", "0");
     HttpServer::new(|| {
         let app  = App::new().configure(views::views_factory);
         return app

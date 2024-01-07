@@ -43,6 +43,7 @@ impl TaskStatus {
     }
 
     pub fn from_string(status: String) -> Self {
+        println!("{}", status);
         match status.as_str() {
             "DONE" => Self::DONE,
             "PENDING" => Self::PENDING,
