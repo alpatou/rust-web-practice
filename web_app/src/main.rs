@@ -3,6 +3,7 @@ mod views;
 mod to_do;
 mod state;
 mod processes;
+mod json_serialization;
 
 async fn greet ( req: HttpRequest) -> impl Responder {
     let name  = req.match_info().get("name").unwrap_or("World");
