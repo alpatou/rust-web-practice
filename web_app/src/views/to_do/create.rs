@@ -1,24 +1,22 @@
 use crate::processes::process_input;
 use crate::state::read_file;
-use crate::to_do::ItemTypes;
 use crate::to_do::enums::Command;
+use crate::to_do::ItemTypes;
 use crate::to_do::{enums::TaskStatus, to_do_factory};
 use actix_web::HttpRequest;
 use serde_json::value::Value;
 use serde_json::Map;
 
-pub async fn create ( req: HttpRequest) -> String {
+pub async fn create(req: HttpRequest) -> String {
+    let file_path: &str = "./state.json";
 
-   let file_path : &str = "./state.json";
+    let state: Map<String, Value> = read_file(file_path);
 
-   let state : Map<String, Value> = read_file(file_path);
+    let title: String = req.match_info().get("title").unwrap().to_string();
 
-   let title : String = req.match_info().get("title").unwrap().to_string();
+    let item: ItemTypes = to_do_factory(&title, TaskStatus::PENDING);
 
-   let item : ItemTypes = to_do_factory(&title, TaskStatus::PENDING );
+    process_input(item, Command::CREATE, &state);
 
-   process_input(item,Command::CREATE ,&state );
-
-   format!("{} created", title)
-
+    format!("{} created", title)
 }
