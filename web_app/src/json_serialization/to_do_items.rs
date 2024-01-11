@@ -38,4 +38,32 @@ impl ToDoItems {
             done_item_count: done_count,
         };
     }
+
+    pub fn get_state() -> ToDoItems {
+        let file_path: &str = "./state.json";
+
+        let state: Map<String, Value> = read_file(file_path);
+
+        let mut array_buffer: Vec<ItemTypes> = Vec::new();
+
+        for (key, value) in state {
+            let status = TaskStatus::from_string(value.as_str().unwrap().to_string());
+
+            let item: ItemTypes = to_do_factory(&key, status);
+
+            array_buffer.push(item);
+        }
+
+        return ToDoItems::new(array_buffer);
+    }
+}
+
+impl Responder for ToDoItems {
+    type Body = BoxBody;
+    fn respond_to(self, req: &HttpRequest) -> HttpResponse<Self::Body> {
+        let body: String = serde_json::to_string(&self).unwrap();
+        HttpResponse::Ok()
+            .content_type(ContentType::json())
+            .body(body)
+    }
 }
